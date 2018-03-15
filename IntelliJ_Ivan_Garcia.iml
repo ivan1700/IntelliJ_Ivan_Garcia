@@ -6,9 +6,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Boletin/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Boletin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CalculadorMedallas" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Puntuable5" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Puntuable4/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Puntuable4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TorneoTenis/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/contraseñas" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/contraseñas/src" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
