@@ -9,7 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Puntuable4/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Puntuable4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TorneoTenis/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/contraseñas" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/contraseñas" />
       <excludeFolder url="file://$MODULE_DIR$/contraseñas/src" />
     </content>
     <orderEntry type="inheritedJdk" />
