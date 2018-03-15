@@ -1,4 +1,4 @@
-public enum  skills {
+public enum  Skills {
     Attack_Boost_I(1.2),
     Attack_Boost_II(1.4),
     Attack_Boost_III(1.6),
@@ -6,7 +6,7 @@ public enum  skills {
     Attack_Boost_V(2);
 
     private double multiplicador;
-    skills(double multiplicador){
+    Skills(double multiplicador){
         this.multiplicador=multiplicador;
     }
 
