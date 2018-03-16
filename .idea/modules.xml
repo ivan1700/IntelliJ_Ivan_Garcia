@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IntelliJ_Ivan_Garcia.iml" filepath="$PROJECT_DIR$/IntelliJ_Ivan_Garcia.iml" />
       <module fileurl="file://$PROJECT_DIR$/KhUX_Calculador_Medallas/KhUX_Calculador_Medallas.iml" filepath="$PROJECT_DIR$/KhUX_Calculador_Medallas/KhUX_Calculador_Medallas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrioridadHospital/PrioridadHospital.iml" filepath="$PROJECT_DIR$/PrioridadHospital/PrioridadHospital.iml" />
       <module fileurl="file://$PROJECT_DIR$/Puntuable5/Puntuable5.iml" filepath="$PROJECT_DIR$/Puntuable5/Puntuable5.iml" />
       <module fileurl="file://$PROJECT_DIR$/gilipollez/gilipollez.iml" filepath="$PROJECT_DIR$/gilipollez/gilipollez.iml" />
     </modules>
