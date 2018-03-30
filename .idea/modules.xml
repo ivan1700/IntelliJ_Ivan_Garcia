@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Tema6/Almacen/Almacen.iml" filepath="$PROJECT_DIR$/Tema6/Almacen/Almacen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boletin/Boletin.iml" filepath="$PROJECT_DIR$/Boletin/Boletin.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjerciciosMapasYSets/EjerciciosMapasYSets.iml" filepath="$PROJECT_DIR$/EjerciciosMapasYSets/EjerciciosMapasYSets.iml" />
-      <module fileurl="file://$PROJECT_DIR$/IntelliJ_Ivan_Garcia.iml" filepath="$PROJECT_DIR$/IntelliJ_Ivan_Garcia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosTema3/EjerciciosTema3.iml" filepath="$PROJECT_DIR$/EjerciciosTema3/EjerciciosTema3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosTema4/EjerciciosTema4.iml" filepath="$PROJECT_DIR$/EjerciciosTema4/EjerciciosTema4.iml" />
       <module fileurl="file://$PROJECT_DIR$/KhUX_Calculador_Medallas/KhUX_Calculador_Medallas.iml" filepath="$PROJECT_DIR$/KhUX_Calculador_Medallas/KhUX_Calculador_Medallas.iml" />
       <module fileurl="file://$PROJECT_DIR$/PrioridadHospital/PrioridadHospital.iml" filepath="$PROJECT_DIR$/PrioridadHospital/PrioridadHospital.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Puntuable4/Puntuable4.iml" filepath="$PROJECT_DIR$/Puntuable4/Puntuable4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Puntuable5/Puntuable5.iml" filepath="$PROJECT_DIR$/Puntuable5/Puntuable5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reloj/Reloj.iml" filepath="$PROJECT_DIR$/Reloj/Reloj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TorneoTenis/TorneoTenis.iml" filepath="$PROJECT_DIR$/TorneoTenis/TorneoTenis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contraseñas/contraseñas.iml" filepath="$PROJECT_DIR$/contraseñas/contraseñas.iml" />
       <module fileurl="file://$PROJECT_DIR$/gilipollez/gilipollez.iml" filepath="$PROJECT_DIR$/gilipollez/gilipollez.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practicasRecursivas/practicasRecursivas.iml" filepath="$PROJECT_DIR$/practicasRecursivas/practicasRecursivas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosTema4/repaso/repaso.iml" filepath="$PROJECT_DIR$/EjerciciosTema4/repaso/repaso.iml" />
     </modules>
   </component>
 </project>
