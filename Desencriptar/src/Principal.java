@@ -1,13 +1,27 @@
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Principal  {
     public static void main(String[] args) {
-        Stack<Character> aDesencriptar = new Stack<>();
+        Deque<Character> aDesencriptar = new ArrayDeque<>();
         String fraseADesencriptar="Olimpia(ad) de I(rofn)mática";
+        boolean introducirAPila=false;
 
         for (int i = 0; i <fraseADesencriptar.length() ; i++) {
             char actual=fraseADesencriptar.charAt(i);
-            System.out.println(actual);
+            if(actual=='('){
+                introducirAPila=true;
+            }else if(actual==')'){
+                introducirAPila=false;
+            }
+            if(introducirAPila==true){
+                if(actual!='('){
+                    aDesencriptar.add(actual);
+                }
+            }
+
         }
+        System.out.println(aDesencriptar);
+        System.out.println(fraseADesencriptar);
     }
 }
