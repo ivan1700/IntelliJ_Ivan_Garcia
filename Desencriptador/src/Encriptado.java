@@ -4,6 +4,7 @@ import java.util.Stack;
 /**
  * Encriptado
  * Author:Ivan Garcia Belen
+ * Version: 1.0
  */
 public class Encriptado {
 
