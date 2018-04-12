@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Tema6/Almacen/Almacen.iml" filepath="$PROJECT_DIR$/Tema6/Almacen/Almacen.iml" />
       <module fileurl="file://$PROJECT_DIR$/Boletin/Boletin.iml" filepath="$PROJECT_DIR$/Boletin/Boletin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Desencriptador/Desencriptador.iml" filepath="$PROJECT_DIR$/Desencriptador/Desencriptador.iml" />
       <module fileurl="file://$PROJECT_DIR$/Desencriptar/Desencriptar.iml" filepath="$PROJECT_DIR$/Desencriptar/Desencriptar.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjerciciosMapasYSets/EjerciciosMapasYSets.iml" filepath="$PROJECT_DIR$/EjerciciosMapasYSets/EjerciciosMapasYSets.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjerciciosTema3/EjerciciosTema3.iml" filepath="$PROJECT_DIR$/EjerciciosTema3/EjerciciosTema3.iml" />
