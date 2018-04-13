@@ -15,6 +15,8 @@ public class Principal {
                 case 0:
                     agenda.anyadirContacto();
                     break;
+                case 1:
+                    agenda.borrarContacto();
             }
 
         }while(botonIntroducido!=SALIR);

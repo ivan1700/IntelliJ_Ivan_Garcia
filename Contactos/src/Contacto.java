@@ -17,8 +17,8 @@ public class Contacto {
 
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

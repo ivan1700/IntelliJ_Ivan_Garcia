@@ -2,6 +2,7 @@ public enum OMenu {
     AÑADIR_CONTACTO("Añadir Contacto"),
     BORRAR_CONTACTO("Borrar Contacto"),
     AÑADIR_INFO("Añadir info"),
+    VER_INFO("Ver info"),
     CONTACTOS_CON_INFO_DETERMINADA("Contactos con info determinada");
 
     String opcion;
