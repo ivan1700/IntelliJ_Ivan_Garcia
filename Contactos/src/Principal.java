@@ -11,12 +11,24 @@ public class Principal {
             botonIntroducido= JOptionPane.showOptionDialog(null,"Opcion",
                     "Seleccione una opcion",0,0,null,OMenu.values(),OMenu.AÑADIR_CONTACTO);
             System.out.println(botonIntroducido);
+
             switch (botonIntroducido){
                 case 0:
                     agenda.anyadirContacto();
                     break;
                 case 1:
                     agenda.borrarContacto();
+                    break;
+                case 2:
+                    agenda.anyadirInfo();
+                    break;
+                case 3:
+                    agenda.verInfo();
+
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null,agenda.verInfoConcreta());
+                    break;
             }
 
         }while(botonIntroducido!=SALIR);
