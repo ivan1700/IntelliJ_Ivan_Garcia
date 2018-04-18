@@ -27,7 +27,7 @@ public class Principal {
 
                     break;
                 case 4:
-                    JOptionPane.showMessageDialog(null,agenda.verInfoConcreta());
+                    agenda.verInfoConcreta();
                     break;
             }
 
