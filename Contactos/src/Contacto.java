@@ -29,6 +29,7 @@ public class Contacto {
 
         String id = JOptionPane.showInputDialog(null, "¿Que clase de información quieres introduir?");
         String informacion = JOptionPane.showInputDialog(null, "Introduce los datos de esa información");
+
         if (!c.info.containsKey(id)) {
             c.info.put(id, new ArrayList<>());
             System.out.println("La key no existe " + id + " creada");
@@ -42,8 +43,8 @@ public class Contacto {
             }
 
         }
-
     }
+
 
     public String verInfo(Contacto c) {
         String salida = "";
@@ -70,6 +71,7 @@ public class Contacto {
         }
         return null;
     }
+
 
     @Override
     public String toString() {
