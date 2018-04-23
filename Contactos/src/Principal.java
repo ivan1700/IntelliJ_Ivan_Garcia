@@ -9,8 +9,8 @@ public class Principal {
         int botonIntroducido;
 
         do {
-            botonIntroducido = JOptionPane.showOptionDialog(null, "Opcion",
-                    "Seleccione una opcion", 0, 0, null, OMenu.values(), OMenu.AÑADIR_CONTACTO);
+            botonIntroducido = JOptionPane.showOptionDialog(null, "Seleccione una opción.",
+                    "Seleccione una opcion.", 0, 0, null, OMenu.values(), OMenu.AÑADIR_CONTACTO);
             System.out.println(botonIntroducido);
 
             switch (botonIntroducido) {

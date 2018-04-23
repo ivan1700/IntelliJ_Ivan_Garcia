@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Agenda {
     Set<Contacto> Agenda = new HashSet<>();
-    Utilidades Utilidades = new Utilidades();
 
 
     public void anyadirContacto() {
