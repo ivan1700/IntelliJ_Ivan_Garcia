@@ -28,6 +28,12 @@ public class Principal {
                     Medallero.medallero.add(m);
                     continue;
 
+                case BORRAR:
+                    continue;
+
+                case DETALLES:
+                    continue;
+
                 case LISTADO:
                     JOptionPane.showMessageDialog(null,Medallero.listarMedallas());
                     continue;
