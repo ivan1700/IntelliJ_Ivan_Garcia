@@ -3,6 +3,7 @@ package com.ejerciciosEDE.test;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 //EJERCICIO 2
 public class SimpleCalculatorTest {
@@ -62,4 +63,46 @@ public class SimpleCalculatorTest {
         boolean actual=this.calculator.isEvenNumber(number);
         assertTrue("Es false debido a que el número es impar",actual);
     }
+
+    //Ejercicio 6
+    @Test
+    public void povOf2_0(){
+        int number=0;
+        int expected=1;
+        String actual=(calculator.povOf2(number));
+        assertEquals(expected,Integer.parseInt(actual));
+    }
+
+    @Test
+    public void povOf2_1(){
+        int number=1;
+        int expected=2;
+        String actual=(calculator.povOf2(number));
+        assertSame(expected,Integer.parseInt(actual));
+    }
+
+    @Test
+    public void povOf2_2(){
+        int number=5;
+        int expected=34342;
+        String actual=(calculator.povOf2(number));
+        assertNotSame(expected,Integer.parseInt(actual));
+    }
+
+    @Test
+    public void povOf2_3(){
+        int number=6;
+        int expected=64;
+        String actual=(calculator.povOf2(number));
+        assertThat(Integer.parseInt(actual), is(expected));
+    }
+
+    @Test
+    public void povOf2_4(){
+        int number=100;
+        int expected=0;
+        String actual=(calculator.povOf2(number));
+        assertNotEquals(expected,actual);
+    }
+
 }
