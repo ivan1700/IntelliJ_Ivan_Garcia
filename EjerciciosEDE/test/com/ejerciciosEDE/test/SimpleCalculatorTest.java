@@ -59,14 +59,14 @@ public class SimpleCalculatorTest {
     //Ejercicio 4
     @Test
     public void isEvenNumber0(){
-        int number=2;
+        int number=4;
         boolean actual=this.calculator.isEvenNumber(number);
         assertTrue("Es false debido a que el número es impar",actual);
     }
 
     @Test
     public void isEvenNumber1(){
-        int number=23;
+        int number=7;
         boolean actual=this.calculator.isEvenNumber(number);
         assertTrue("Es false debido a que el número es impar",actual);
     }
