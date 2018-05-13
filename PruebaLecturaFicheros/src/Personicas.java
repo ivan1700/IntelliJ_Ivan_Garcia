@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personicas {
+public class Personicas implements Serializable {
     private String nombre;
     private int edad;
     private char sexo;

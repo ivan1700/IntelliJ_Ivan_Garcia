@@ -10,6 +10,7 @@ public class PruebaPersonicas {
         p.anyadirALista("Ines", 20, 'M');
         p.anyadirALista("Miguel", 19, 'H');
         p.anyadirALista("German", 30, 'H');
+        //Escribir
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("listaPersonicas.txt"))) {
             for (Personicas ps:
                  p.lista) {
@@ -19,6 +20,7 @@ public class PruebaPersonicas {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //leer
         try(BufferedReader br = new BufferedReader(new FileReader("listaPersonicas.txt"))) {
             String linea;
             while((linea=br.readLine())!=null){
