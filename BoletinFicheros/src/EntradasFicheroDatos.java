@@ -9,8 +9,8 @@ public class EntradasFicheroDatos implements EntradaArchivador {
         try(DataInputStream dis = new DataInputStream(new FileInputStream(f))) {
 
             try {
-                String titulo = "";
-                while ((titulo = dis.readUTF()) != null) {
+                String titulo = dis.readUTF();
+                while (true) {
                     Entrada e = new Entrada(titulo, dis.readUTF(), dis.readInt(), dis.readUTF());
                     System.out.println(e);
                     salida.add(e);
