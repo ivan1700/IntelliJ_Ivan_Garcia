@@ -41,7 +41,23 @@ public class EntradasFicheroObjetos implements EntradaArchivador {
 
     @Override
     public List<Entrada> modificarEntrada(File f, List<Entrada> entradas, Entrada entrada) {
-        return null;
+        Entrada aBorrar=null;
+        for (Entrada e:
+             entradas) {
+            if(e.getTitulo().equals(entrada.getTitulo())){
+                aBorrar=e;
+            }
+        }
+        entradas.remove(aBorrar);
+        entradas.add(entrada);
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {
+            oos.writeObject(entradas);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return entradas;
     }
 
     @Override

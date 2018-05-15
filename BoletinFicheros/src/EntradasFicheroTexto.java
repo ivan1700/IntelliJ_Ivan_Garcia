@@ -42,30 +42,33 @@ public class EntradasFicheroTexto implements EntradaArchivador {
 
     @Override
     public List<Entrada> modificarEntrada(File f, List<Entrada> entradas, Entrada entrada) {
-
-        for (Entrada e:
-             entradas) {
-            if(e.getTitulo().equals(entrada.getTitulo())){
-                entradas.remove(e);
-                entradas.add(entrada);
-                try(BufferedWriter bw= new BufferedWriter(new FileWriter(f))) {
-                    for (Entrada en:
-                         entradas) {
-                        bw.write(en.getTitulo());
-                            bw.newLine();
-                        bw.write(en.getContenido());
-                            bw.newLine();
-                        bw.write(""+en.getPuntuacion());
-                            bw.newLine();
-                        bw.write(en.getAutor());
-                            bw.newLine();
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-
+        Entrada aBorrar = null;
+        for (Entrada e :
+                entradas) {
+            if (e.getTitulo().equals(entrada.getTitulo())) {
+                aBorrar = e;
             }
         }
+            entradas.remove(aBorrar);
+            entradas.add(entrada);
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
+                for (Entrada e :
+                        entradas) {
+                    bw.write(e.getTitulo());
+                    bw.newLine();
+                    bw.write(e.getContenido());
+                    bw.newLine();
+                    bw.write("" + e.getPuntuacion());
+                    bw.newLine();
+                    bw.write(e.getAutor());
+                    bw.newLine();
+                }
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
+
+
         return entradas;
     }
 
