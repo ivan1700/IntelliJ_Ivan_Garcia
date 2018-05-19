@@ -9,14 +9,14 @@ public class EntradasFicheroDatos implements EntradaArchivador {
         try(DataInputStream dis = new DataInputStream(new FileInputStream(f))) {
 
             try {
-                String titulo = "";
-                while ((titulo = dis.readUTF()) != null) {
+                String titulo = dis.readUTF();
+                while (true) {
                     Entrada e = new Entrada(titulo, dis.readUTF(), dis.readInt(), dis.readUTF());
                     System.out.println(e);
                     salida.add(e);
                 }
             }catch (EOFException eofe){
-                eofe.printStackTrace();
+                System.out.println("He llegado al final del archivo");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -46,8 +46,33 @@ public class EntradasFicheroDatos implements EntradaArchivador {
 
     @Override
     public List<Entrada> modificarEntrada(File f, List<Entrada> entradas, Entrada entrada) {
-        return null;
+        Entrada aBorrar=null;
+        for (Entrada e:
+             entradas) {
+            if (e.getTitulo().equals(entrada.getTitulo())) {
+                aBorrar=e;
+            }
+        }
+        entradas.remove(aBorrar);
+        entradas.add(entrada);
+            try(DataOutputStream dos = new DataOutputStream(new FileOutputStream(f))) {
+                for (Entrada e:
+                     entradas) {
+                    dos.writeUTF(e.getTitulo());
+                    dos.writeUTF(e.getContenido());
+                    dos.writeInt(e.getPuntuacion());
+                    dos.writeUTF(e.getAutor());
+                }
+            } catch (FileNotFoundException e1) {
+                e1.printStackTrace();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
+
+        return entradas;
     }
+
 
     @Override
     public String tipoArchivo() {
