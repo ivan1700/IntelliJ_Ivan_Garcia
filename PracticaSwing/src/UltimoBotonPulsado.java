@@ -24,10 +24,11 @@ public class UltimoBotonPulsado {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         //Con el GridLayout modificas la estructura y la conposicion de la ventana
-        panel.setLayout(new GridLayout(0,2));
+        panel.setLayout(new GridLayout(0,2,5,5));
         label.setHorizontalAlignment(JLabel.CENTER);
         botonUno.setText("Goku");
         botonDos.setText("Vegeta");
+        label2.setText("Pulsa en un botón");
         //Reacciones de cada boton
         botonUno.addActionListener(new ActionListener() {
             @Override
