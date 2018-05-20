@@ -133,12 +133,14 @@ public class Prueba {
         framePrincipal.setSize(1000,800);
         panelPrincipal.setLayout(new GridLayout(0,2,5,5));
         LimagenProducto.setPreferredSize(new Dimension(1000,1000));
+        framePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panelPrincipal.add(selectorTipoProducto);
         panelPrincipal.add(LimagenProducto);
         panelPrincipal.add(selectorProducto);
         framePrincipal.add(panelPrincipal);
         framePrincipal.setLocationRelativeTo(null);
         framePrincipal.setVisible(true);
+
     }
 
 
