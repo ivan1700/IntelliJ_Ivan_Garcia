@@ -28,12 +28,14 @@ public class Prueba {
         Periferico p0 =new Periferico("Mando PS4",54.89,"mandops4.jpg",Plataforma.PS4);
         Periferico p1 =new Periferico("Mando XBox One",54.89,"mandoXone.jpg",Plataforma.XONE);
         Merchandising m1 = new Merchandising("Jose Angel",0.99,"jose.jpg");
+        Merchandising m2 = new Merchandising("Mejias",1000.00,"MejiCara.jpg");
         productos.add(v0);
         productos.add(v1);
         productos.add(v2);
         productos.add(p0);
         productos.add(p1);
         productos.add(m1);
+        productos.add(m2);
     }
     static final String[] MenuProductos = {"Videojuegos","Periféricos","Merchandising"};
     static private JFrame framePrincipal = new JFrame();
@@ -148,14 +150,15 @@ public class Prueba {
         panelPrincipal.add(panelPreviewProducto);
         panelPrincipal.add(panelCliente);
         panelPrincipal.add(panelInformacion);
-        panelPrincipal.setLayout(new GridLayout(0,2,5,5));
+        panelPrincipal.setLayout(new GridLayout(0,2,5,5
+        ));
         //Panel Productos
         panelProductos.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.gray),"Selector productos"));
         panelProductos.add(textoSelectoTProducto);
         panelProductos.add(selectorTipoProducto);
         panelProductos.add(textoSelectoProducto);
         panelProductos.add(selectorProducto);
-        panelProductos.setLayout(new GridLayout(0,1,10,10));
+        panelProductos.setLayout(new GridLayout(2,2,10,10));
         //Panel Preview productos
         panelPreviewProducto.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.BLACK),"Preview"));
         panelPreviewProducto.add(LimagenProducto);
