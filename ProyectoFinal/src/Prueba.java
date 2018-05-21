@@ -2,6 +2,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -35,9 +37,18 @@ public class Prueba {
     }
     static final String[] MenuProductos = {"Videojuegos","Periféricos","Merchandising"};
     static private JFrame framePrincipal = new JFrame();
+    //Declaracion de paneles
     static private JPanel panelPrincipal = new JPanel();
+    static private JPanel panelProductos = new JPanel();
+    static private JPanel panelInformacion = new JPanel();
+    static private JPanel panelPreviewProducto = new JPanel();
+    static private JPanel panelCliente= new JPanel();
+    //Contenido de panelProductos
     static private JComboBox selectorTipoProducto= new JComboBox();
     static private JComboBox selectorProducto = new JComboBox();
+    static private JLabel textoSelectoTProducto = new JLabel();
+    static private JLabel textoSelectoProducto = new JLabel();
+    //Contenido de panelPreviewProductos
     static private JLabel LimagenProducto = new JLabel();
     static private ImageIcon imagenProducto = new ImageIcon();
     static private Icon icono;
@@ -128,15 +139,35 @@ public class Prueba {
 
 
         });
+        textoSelectoTProducto.setText("Tipo de producto:");
+        textoSelectoProducto.setText("Producto:");
 
-        //Configuracion de la ventana
-        framePrincipal.setSize(1000,800);
+
+        //Panel Principal
+        panelPrincipal.add(panelProductos);
+        panelPrincipal.add(panelPreviewProducto);
+        panelPrincipal.add(panelCliente);
+        panelPrincipal.add(panelInformacion);
         panelPrincipal.setLayout(new GridLayout(0,2,5,5));
-        LimagenProducto.setPreferredSize(new Dimension(1000,1000));
+        //Panel Productos
+        panelProductos.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.gray),"Selector productos"));
+        panelProductos.add(textoSelectoTProducto);
+        panelProductos.add(selectorTipoProducto);
+        panelProductos.add(textoSelectoProducto);
+        panelProductos.add(selectorProducto);
+        panelProductos.setLayout(new GridLayout(0,1,10,10));
+        //Panel Preview productos
+        panelPreviewProducto.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.BLACK),"Preview"));
+        panelPreviewProducto.add(LimagenProducto);
+        panelPreviewProducto.setLayout(new GridLayout(0,1));
+        panelPreviewProducto.setSize(1000,1000);
+        //Panel Cliente
+        panelCliente.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.gray),"Informacion Cliente"));
+        //Panel Informacion
+        panelInformacion.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.gray),"Información Producto"));
+        //FramePrincipal
         framePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        panelPrincipal.add(selectorTipoProducto);
-        panelPrincipal.add(LimagenProducto);
-        panelPrincipal.add(selectorProducto);
+        framePrincipal.setSize(600,800);
         framePrincipal.add(panelPrincipal);
         framePrincipal.setLocationRelativeTo(null);
         framePrincipal.setVisible(true);
