@@ -8,19 +8,20 @@ public class PreviewProducto {
     static private ImageIcon imagenProducto;
     static private Icon icono;
 
-    public PreviewProducto (){
-        this.panelPreviewProducto= new JPanel();
-        this.LimagenProducto= new JLabel();
-        this.imagenProducto= new ImageIcon();
+
+    public PreviewProducto() {
+        this.panelPreviewProducto = new JPanel();
+        this.LimagenProducto = new JLabel();
+        this.imagenProducto = new ImageIcon();
         CrearInterfaz();
 
     }
 
     private void CrearInterfaz() {
-        panelPreviewProducto.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.BLACK),"Preview"));
+        panelPreviewProducto.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.BLACK), "Preview"));
         panelPreviewProducto.add(LimagenProducto);
-        panelPreviewProducto.setLayout(new GridLayout(0,1));
-        panelPreviewProducto.setSize(1000,1000);
+        panelPreviewProducto.setLayout(new GridLayout(0, 1));
+        panelPreviewProducto.setSize(1000, 1000);
 
     }
 

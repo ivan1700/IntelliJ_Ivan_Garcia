@@ -23,9 +23,9 @@ public class PanelProductos {
         this.selectorProducto = new JComboBox();
         this.textoSelectoProducto = new JLabel();
         this.textoSelectoTProducto = new JLabel();
-        this.productos=new ArrayList<>();
-        this.listaFiltrada=new ArrayList<>();
-        productos=l.gerProductos();
+        this.productos = new ArrayList<>();
+        this.listaFiltrada = new ArrayList<>();
+        productos = l.gerProductos();
         CrearInterfaz();
     }
 
@@ -67,21 +67,52 @@ public class PanelProductos {
         textoSelectoProducto.setText("Producto:");
 
 
-
     }
 
     /**
      * Metodo para mostrar la información de los productos
+     *
      * @param e
      */
     private void seleccionarProducto(ItemEvent e) {
-        for (int i = 0; i <listaFiltrada.size() ; i++) {
-            if(e.getItem().toString().equals(listaFiltrada.get(i).getNombre())){
-                PreviewProducto.setImagenProducto(new ImageIcon(listaFiltrada.get(i).getImagen()));;
+        for (int i = 0; i < listaFiltrada.size(); i++) {
+            if (e.getItem().toString().equals(listaFiltrada.get(i).getNombre())) {
+                PreviewProducto.setImagenProducto(new ImageIcon(listaFiltrada.get(i).getImagen()));
                 PreviewProducto.setIcono(new ImageIcon(PreviewProducto.getImagenProducto().getImage().getScaledInstance
-                        (PreviewProducto.getLimagenProducto().getWidth(),PreviewProducto.getLimagenProducto().getHeight(), Image.SCALE_DEFAULT)));
+                        (PreviewProducto.getLimagenProducto().getWidth(), PreviewProducto.getLimagenProducto().getHeight(), Image.SCALE_DEFAULT)));
                 PreviewProducto.getLimagenProducto().setIcon(PreviewProducto.getIcono());
+
+                PanelInfoProducto.setTFNombre(listaFiltrada.get(i).getNombre());
+                PanelInfoProducto.setTFPrecio(listaFiltrada.get(i).getPrecio());
+                AnyadirInfoPeriferico(listaFiltrada.get(i));
+                AnyadirInfoVideojuego(listaFiltrada.get(i));
             }
+        }
+    }
+
+    /**
+     * Metodo para hacer un casting de videojuego de un producto para poder conseguir el valor de "Plataforma" y "Genero"
+     *
+     * @param producto que cogemos de la lista de productos
+     */
+    private void AnyadirInfoPeriferico(Producto producto) {
+        if (producto.getClass().equals(Periferico.class)) {
+            Periferico p = (Periferico) producto;
+            PanelInfoProducto.setTFPlataforma(String.valueOf(p.getPlataforma()));
+            PanelInfoProducto.setTFGenero(null);
+        }
+    }
+
+    /**
+     * Metodo para hacer un casting de videojuego de un producto para poder conseguir el valor de "Plataforma" y "Genero"
+     *
+     * @param producto que cogemos de la lista de productos
+     */
+    private void AnyadirInfoVideojuego(Producto producto) {
+        if (producto.getClass().equals(Videojuego.class)) {
+            Videojuego v = (Videojuego) producto;
+            PanelInfoProducto.setTFPlataforma(String.valueOf(v.getPlataforma()));
+            PanelInfoProducto.setTFGenero(String.valueOf(v.getGenero()));
         }
     }
 

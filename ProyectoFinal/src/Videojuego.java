@@ -6,21 +6,23 @@ import java.util.List;
 public class Videojuego extends Producto implements Serializable {
     private Plataforma plataforma;
     private final Genero genero;
-    public Videojuego(String nombre, double precio, String imagen,Plataforma plataforma, Genero genero) {
+
+    public Videojuego(String nombre, double precio, String imagen, Plataforma plataforma, Genero genero) {
         super(nombre, precio, imagen);
-        this.plataforma=plataforma;
-        this.genero=genero;
+        this.plataforma = plataforma;
+        this.genero = genero;
 
     }
-    public String getNombre(){
+
+    public String getNombre() {
         return this.nombre;
     }
 
-    public double getPrecio(){
+    public double getPrecio() {
         return this.precio;
     }
 
-    public String getImagen(){
+    public String getImagen() {
         return this.imagen;
     }
 
