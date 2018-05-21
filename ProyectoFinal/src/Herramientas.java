@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Herramientas {
+public class Herramientas implements Serializable{
     /**
      * Guarda la lista de los productos en un fichero para luego poder ser cargado.
      * @param lista de los productos disponibles
@@ -21,7 +21,7 @@ public class Herramientas {
         }
     }
 
-    public List<Producto> leerProdcutosDeFichero(){
+    public static List<Producto> leerProdcutosDeFichero(){
         List<Producto> salida = new ArrayList<>();
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("productos.ob"))) {
             try{
