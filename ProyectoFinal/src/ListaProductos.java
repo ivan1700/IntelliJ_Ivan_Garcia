@@ -10,13 +10,13 @@ public class ListaProductos implements Serializable {
 
 
     public ListaProductos(){
-       productos=gerProductos();
+       productos=getProductos();
     }
     /**
      * A partir de la lista de donde están los productos, selecciona solo los de tipo "Periféricos".
      * @return Una lista en la que solo aparece los productos de tipo "Periféricos".
      */
-    public List<Producto> gerProductos(){
+    public List<Producto> getProductos(){
         List<Producto> salida = new ArrayList<>();
         salida=Herramientas.leerProdcutosDeFichero();
         return salida;

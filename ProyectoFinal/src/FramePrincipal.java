@@ -25,7 +25,7 @@ public class FramePrincipal {
     private void CrearInterfaz() {
         frame.setLayout(new GridLayout(0, 2, 5, 5));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 800);
+        frame.setSize(655, 800);
         frame.add(productos);
         frame.add(previewProducto);
         frame.add(clientes);

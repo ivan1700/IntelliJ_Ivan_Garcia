@@ -12,6 +12,8 @@ public class PanelInfoProducto {
     private static JTextField TFPlataforma;
     private static JTextField TFPrecio;
     private static JTextField TFGenero;
+    private static JButton comprar;
+    private static JButton comprarPorPuntos;
 
 
     public PanelInfoProducto() {
@@ -24,6 +26,8 @@ public class PanelInfoProducto {
         TFPlataforma = new JTextField();
         TFPrecio = new JTextField();
         TFGenero = new JTextField();
+        comprar = new JButton();
+        comprarPorPuntos =new JButton();
         CrearInterfaz();
     }
 
@@ -55,6 +59,12 @@ public class PanelInfoProducto {
         precio.setText("Precio:");
         TFPrecio.setEnabled(false);
         TFPrecio.setDisabledTextColor(Color.BLACK);
+        //Comprar
+        panel.add(comprar);
+        comprar.setText("Comprar");
+        //ComprarPorPuntos
+        panel.add(comprarPorPuntos);
+        comprarPorPuntos.setText("Comprar \n con puntos");
     }
 
     public static void setTFNombre(String nombreProducto) {
@@ -66,7 +76,7 @@ public class PanelInfoProducto {
     }
 
     public static void setTFPrecio(double precio) {
-        TFPrecio.setText(String.valueOf(precio));
+        TFPrecio.setText(String.valueOf(precio+" €"));
     }
 
     public static void setTFGenero(String genero) {

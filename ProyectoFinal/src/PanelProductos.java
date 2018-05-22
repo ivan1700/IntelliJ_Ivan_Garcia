@@ -25,7 +25,7 @@ public class PanelProductos {
         this.textoSelectoTProducto = new JLabel();
         this.productos = new ArrayList<>();
         this.listaFiltrada = new ArrayList<>();
-        productos = l.gerProductos();
+        productos = l.getProductos();
         CrearInterfaz();
     }
 
