@@ -45,7 +45,11 @@ public class PanelClientes {
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
                 char c= e.getKeyChar();
-                login +=c;
+                login=BorrarCaracter(e,login);
+                if(Character.isLetter(c) || Character.isDigit(c)){
+                    login +=c;
+                }
+                System.out.println("hola");
                 System.out.println("longitud"+ login.length());
                 try{
                     if(Character.isLetter(login.charAt(letraDNI))){
@@ -78,6 +82,20 @@ public class PanelClientes {
         puntos.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Puntos"));
 
 
+    }
+
+    private String BorrarCaracter(KeyEvent e, String login) {
+        if(e.getKeyChar()==8){
+
+            int longitud=login.length();
+            String aux="";
+            for (int i = 0; i <longitud-1; i++) {
+                char c1 =login.charAt(i);
+                aux+=c1;
+            }
+            login=aux;
+        }
+        return login;
     }
 
 
