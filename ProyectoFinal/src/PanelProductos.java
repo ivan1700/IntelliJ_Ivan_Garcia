@@ -3,10 +3,11 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PanelProductos {
+public class PanelProductos implements Serializable {
     static private JPanel panelProductos;
     static private JComboBox selectorTipoProducto;
     static private JComboBox selectorProducto;

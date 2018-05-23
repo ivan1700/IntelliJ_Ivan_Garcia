@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
-public class FramePrincipal {
+public class FramePrincipal implements Serializable {
     private JFrame frame;
     private JPanel productos;
     private JPanel previewProducto;
