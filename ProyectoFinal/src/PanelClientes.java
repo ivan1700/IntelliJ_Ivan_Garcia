@@ -49,7 +49,7 @@ public class PanelClientes {
                 if(Character.isLetter(c) || Character.isDigit(c)){
                     login +=c;
                 }
-
+                System.out.println("hola");
                 System.out.println("longitud"+ login.length());
                 try{
                     if(Character.isLetter(login.charAt(letraDNI))){
