@@ -5,6 +5,7 @@ import java.util.List;
 public class ListaProductos implements Serializable {
     //static Herramientas herramientas= new Herramientas();
     List<Producto> productos;
+    Herramientas herramientas=new Herramientas();
 
 
 
@@ -18,7 +19,8 @@ public class ListaProductos implements Serializable {
      */
     public List<Producto> getProductos(){
         List<Producto> salida = new ArrayList<>();
-        salida=Herramientas.leerProdcutosDeFichero();
+        salida=herramientas.leerProdcutosDeFichero();
+        System.out.println(salida);
         return salida;
     }
     public  List<Producto> SeleccionarListaVideojuegos() {

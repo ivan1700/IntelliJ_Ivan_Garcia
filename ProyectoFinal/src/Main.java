@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.List;
 
-public class Main {
+public class Main  {
     public static void main(String[] args) {
     FramePrincipal f = new FramePrincipal();    }
 }

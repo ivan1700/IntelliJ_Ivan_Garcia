@@ -7,7 +7,7 @@ public class Herramientas implements Serializable{
      * Guarda la lista de los productos en un fichero para luego poder ser cargado.
      * @param lista de los productos disponibles
      */
-    public void guardarProductosEnFicheros(List<Producto> lista){
+    public static void guardarProductosEnFicheros(List<Producto> lista){
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("productos.ob"))) {
             try{
                 oos.writeObject(lista);
