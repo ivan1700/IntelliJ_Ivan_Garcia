@@ -8,12 +8,13 @@ public class PruebaIntroduccionProductos {
         Videojuego v2= new Videojuego("DOOM",49.98,"DOOM.jpg",Plataforma.PC,Genero.FPS);
         Periferico p0 = new Periferico("Mando ps4",59.98,"mandops4.jpg",Plataforma.PS4);
         Periferico p1 = new Periferico("Mando XOne",59.98,"mandoXone.jpg",Plataforma.XONE);
+        Herramientas herramientas=new Herramientas();
         List<Producto> productos = new ArrayList<>();
         productos.add(v0);
         productos.add(v1);
         productos.add(v2);
         productos.add(p0);
         productos.add(p1);
-        Herramientas.guardarProductosEnFicheros(productos);
+        herramientas.guardarProductosEnFicheros(productos);
     }
 }

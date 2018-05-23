@@ -10,6 +10,13 @@ public class Cliente {
         this.id=id;
         this.puntos=0;
     }
+    public Cliente(String nombre,String dni,String id,int puntos){
+        this.nombre=nombre;
+        this.dni=dni;
+        this.id=id;
+        this.puntos=puntos;
+    }
+
 
     public String getNombre() {
         return nombre;

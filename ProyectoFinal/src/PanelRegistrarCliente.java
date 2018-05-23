@@ -13,6 +13,7 @@ public class PanelRegistrarCliente {
     private JTextField IDni;
     private JButton aceptar;
     private JButton cancelar;
+    private Herramientas herramientas=new Herramientas();
 
     public PanelRegistrarCliente() {
         this.frame=new JFrame();
@@ -63,6 +64,7 @@ public class PanelRegistrarCliente {
             public void actionPerformed(ActionEvent e) {
                 Cliente c = new Cliente(Inombre.getText(),IDni.getText(),login);
                 clientes.add(c);
+                herramientas.GuardarClientesEnFichero(clientes);
                 frame.setVisible(false);
             }
         });
