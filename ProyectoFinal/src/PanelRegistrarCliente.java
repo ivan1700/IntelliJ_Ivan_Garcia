@@ -65,6 +65,8 @@ public class PanelRegistrarCliente {
                 Cliente c = new Cliente(Inombre.getText(),IDni.getText(),login);
                 clientes.add(c);
                 herramientas.GuardarClientesEnFichero(clientes);
+                Inombre.setText("");
+                IDni.setText("");
                 frame.setVisible(false);
             }
         });
