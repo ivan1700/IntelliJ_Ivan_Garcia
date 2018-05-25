@@ -78,10 +78,10 @@ public class PanelProductos implements Serializable {
     private void seleccionarProducto(ItemEvent e) {
         for (int i = 0; i < listaFiltrada.size(); i++) {
             if (e.getItem().toString().equals(listaFiltrada.get(i).getNombre())) {
-                PreviewProducto.setImagenProducto(new ImageIcon(listaFiltrada.get(i).getImagen()));
-                PreviewProducto.setIcono(new ImageIcon(PreviewProducto.getImagenProducto().getImage().getScaledInstance
-                        (PreviewProducto.getLimagenProducto().getWidth(), PreviewProducto.getLimagenProducto().getHeight(), Image.SCALE_DEFAULT)));
-                PreviewProducto.getLimagenProducto().setIcon(PreviewProducto.getIcono());
+                PanelPreviewProducto.setImagenProducto(new ImageIcon(listaFiltrada.get(i).getImagen()));
+                PanelPreviewProducto.setIcono(new ImageIcon(PanelPreviewProducto.getImagenProducto().getImage().getScaledInstance
+                        (PanelPreviewProducto.getLimagenProducto().getWidth(), PanelPreviewProducto.getLimagenProducto().getHeight(), Image.SCALE_DEFAULT)));
+                PanelPreviewProducto.getLimagenProducto().setIcon(PanelPreviewProducto.getIcono());
 
                 PanelInfoProducto.setTFNombre(listaFiltrada.get(i).getNombre());
                 PanelInfoProducto.setTFPrecio(listaFiltrada.get(i).getPrecio());

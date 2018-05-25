@@ -10,7 +10,7 @@ public class FramePrincipal implements Serializable {
     private JPanel clientes;
 
     public FramePrincipal() {
-        PreviewProducto pp = new PreviewProducto();
+        PanelPreviewProducto pp = new PanelPreviewProducto();
         PanelProductos ppro = new PanelProductos();
         PanelClientes pc = new PanelClientes();
         PanelInfoProducto pip = new PanelInfoProducto();

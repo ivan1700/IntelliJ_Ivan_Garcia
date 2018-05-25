@@ -2,14 +2,14 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class PreviewProducto {
+public class PanelPreviewProducto {
     static private JPanel panelPreviewProducto;
     static private JLabel LimagenProducto;
     static private ImageIcon imagenProducto;
     static private Icon icono;
 
 
-    public PreviewProducto() {
+    public PanelPreviewProducto() {
         this.panelPreviewProducto = new JPanel();
         this.LimagenProducto = new JLabel();
         this.imagenProducto = new ImageIcon();
@@ -30,7 +30,7 @@ public class PreviewProducto {
     }
 
     public static void setImagenProducto(ImageIcon imagenProducto) {
-        PreviewProducto.imagenProducto = imagenProducto;
+        PanelPreviewProducto.imagenProducto = imagenProducto;
     }
 
     public static JLabel getLimagenProducto() {
@@ -46,7 +46,7 @@ public class PreviewProducto {
     }
 
     public static void setIcono(Icon icono) {
-        PreviewProducto.icono = icono;
+        PanelPreviewProducto.icono = icono;
     }
 
     public static JPanel getPanel() {
