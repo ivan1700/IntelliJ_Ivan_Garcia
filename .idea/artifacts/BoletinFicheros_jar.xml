@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BoletinFicheros:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BoletinFicheros_jar</output-path>
+    <root id="archive" name="BoletinFicheros.jar">
+      <element id="module-output" name="BoletinFicheros" />
+    </root>
+  </artifact>
+</component>
