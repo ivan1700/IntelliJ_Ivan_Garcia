@@ -45,5 +45,24 @@ public class Mapas {
             String valor = numero.getValue();
             System.out.println(key + " " + valor);
         }
+
+        Iterator<Map.Entry<Integer,String>> it= mapa.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<Integer,String> nombre = it.next();
+            nombre.getKey();
+            if (nombre.getKey()==2){
+                nombre.setValue("Modificacion");
+            }
+        }
+
+        Set<Integer> prueba = mapa.keySet();
+        for (Integer i:
+             prueba) {
+            if(i==1){
+                String nombre="hola";
+                mapa.put(i,nombre);
+            }
+        }
+        System.out.println(mapa);
     }
 }

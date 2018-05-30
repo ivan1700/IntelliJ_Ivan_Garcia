@@ -13,12 +13,15 @@ public class PanelClientes {
     private JTextField insercionID;
     private JLabel nombre;
     private JLabel dni;
+    private static JLabel dniAux;
     private JLabel puntos;
     private JButton tarjetaPerdida;
     private List<Cliente> clientes;
     private Herramientas herramientas=new Herramientas();
     private PanelRegistrarCliente prc = new PanelRegistrarCliente();
     private PanelRenovarTarjeta prt =new PanelRenovarTarjeta();
+
+
 
     public PanelClientes(){
 
@@ -27,9 +30,11 @@ public class PanelClientes {
         this.insercionID= new JTextField();
         this.nombre=new JLabel();
         this.dni=new JLabel();
+        this.dniAux= new JLabel();
         this.puntos=new JLabel();
         this.tarjetaPerdida=new JButton();
         clientes = herramientas.LeerClientesDeFichero();
+
         System.out.println(clientes);
         CrearInterfaz();
 
@@ -73,7 +78,7 @@ public class PanelClientes {
         nombre.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Nombre"));
         //DNI
         panel.add(dni);
-        dni.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"DNI e ID"));
+        dni.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"DNI"));
         //puntos
         panel.add(puntos);
         puntos.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Puntos"));
@@ -86,6 +91,7 @@ public class PanelClientes {
                 prt.setVisible();
                 prt.pasarClientes(clientes);
                 prt.devolverClientes();
+
             }
         });
 
@@ -161,10 +167,34 @@ public class PanelClientes {
      * @param c
      */
     private void SeleccionarInfoCliente(Cliente c) {
+        System.out.println(c.getNombre());
+        System.out.println(c.getDni());
+        System.out.println(c.getPuntos());
         nombre.setText(c.getNombre());
-        dni.setText("DNI:"+c.getDni()+"        ID:"+c.getId());
-        puntos.setText(""+c.getPuntos());
+        dni.setText(c.getDni());
+        dniAux.setText(c.getDni());
+        System.out.println("AUXILIAR"+dniAux.getText());
+        puntos.setText(String.valueOf(c.getPuntos()));
     }
+
+    public void comprar(int precio){
+        for (Cliente c:
+             clientes) {
+            if(c.getDni().equals(dniAux.getText())){
+                System.out.println("encontrado");
+                System.out.println(c.getNombre());
+                System.out.println(c.getPuntos());
+                c.setPuntos(precio);
+                herramientas.GuardarClientesEnFichero(clientes);
+                clientes=herramientas.LeerClientesDeFichero();
+                puntos.setText(String.valueOf(c.getPuntos()));
+                JOptionPane.showMessageDialog(null,"Compra realizada con exito\n " +
+                        "Puntos ganados: "+ precio+"\n Puntos totales: "+c.getPuntos());
+            }
+        }
+    }
+
+
 
     public JPanel getPanel(){
         return panel;

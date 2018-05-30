@@ -32,6 +32,7 @@ public class FicheroDatos {
                 String nombre="";
                 while((nombre=dis.readUTF())!=null){
                     meterGente g= new meterGente(nombre,dis.readInt());
+                    System.out.println(g);
                     leidos.add(g);
                 }
             }catch (EOFException e){

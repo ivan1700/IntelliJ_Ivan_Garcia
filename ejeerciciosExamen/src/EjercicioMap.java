@@ -2,7 +2,12 @@ import java.util.*;
 
 public class EjercicioMap {
     public static void main(String[] args) {
-        Set<String> peliculas= new HashSet<>();
+        Set<String> peliculas= new TreeSet<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
 
                 peliculas.add("Star Wars - Un Jedi se pelea con el malo y le gana.");
         peliculas.add("La momia - Una momia egipcia revive pero es derrotada");

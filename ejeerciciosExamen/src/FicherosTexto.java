@@ -52,6 +52,7 @@ public class FicherosTexto {
                 String linea="";
                 while((linea=br.readLine())!=null){
                     leidos.add(linea);
+                    System.out.println(leidos);
                 }
             }catch (EOFException e){
                 e.printStackTrace();

@@ -1,6 +1,10 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.List;
 
 public class PanelInfoProducto {
     private JPanel panel;
@@ -14,6 +18,8 @@ public class PanelInfoProducto {
     private static JTextField TFGenero;
     private static JButton comprar;
     private static JButton comprarPorPuntos;
+    PanelClientes pc=new PanelClientes();
+    Herramientas herramientas= new Herramientas();
 
 
     public PanelInfoProducto() {
@@ -56,16 +62,39 @@ public class PanelInfoProducto {
         //Precio
         panel.add(precio);
         panel.add(TFPrecio);
-        precio.setText("Precio:");
+        precio.setText("Precio en €:");
         TFPrecio.setEnabled(false);
         TFPrecio.setDisabledTextColor(Color.BLACK);
         //Comprar
         panel.add(comprar);
         comprar.setText("Comprar");
+
+        comprar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int puntos= (int) Double.parseDouble(TFPrecio.getText());
+                pc.comprar(puntos);
+            }
+        });
         //ComprarPorPuntos
         panel.add(comprarPorPuntos);
         comprarPorPuntos.setText("Comprar \n con puntos");
+
     }
+
+
+
+    private void guardarPuntos(Cliente c, List<Cliente> clientes, int puntos) {
+        for (Cliente cl:
+             clientes) {
+            if(cl==c){
+                c.setPuntos(puntos);
+                System.out.println(c.getPuntos());
+            }
+        }
+        herramientas.GuardarClientesEnFichero(clientes);
+    }
+
 
     public static void setTFNombre(String nombreProducto) {
         TFNombre.setText(nombreProducto);
@@ -76,7 +105,7 @@ public class PanelInfoProducto {
     }
 
     public static void setTFPrecio(double precio) {
-        TFPrecio.setText(String.valueOf(precio+" €"));
+        TFPrecio.setText(String.valueOf(precio));
     }
 
     public static void setTFGenero(String genero) {
