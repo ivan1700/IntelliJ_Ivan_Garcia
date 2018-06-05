@@ -79,21 +79,18 @@ public class PanelInfoProducto {
         //ComprarPorPuntos
         panel.add(comprarPorPuntos);
         comprarPorPuntos.setText("Comprar \n con puntos");
-
-    }
-
-
-
-    private void guardarPuntos(Cliente c, List<Cliente> clientes, int puntos) {
-        for (Cliente cl:
-             clientes) {
-            if(cl==c){
-                c.setPuntos(puntos);
-                System.out.println(c.getPuntos());
+        comprarPorPuntos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int precio= (int) Double.parseDouble(TFPrecio.getText());
+                pc.comprarPorPuntos(precio);
             }
-        }
-        herramientas.GuardarClientesEnFichero(clientes);
+        });
     }
+
+
+
+
 
 
     public static void setTFNombre(String nombreProducto) {

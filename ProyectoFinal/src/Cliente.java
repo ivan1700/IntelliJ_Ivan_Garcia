@@ -4,17 +4,18 @@ public class Cliente {
     private String id;
     private int puntos;
 
-    public Cliente(String nombre,String dni,String id){
-        this.nombre=nombre;
-        this.dni=dni;
-        this.id=id;
-        this.puntos=0;
+    public Cliente(String nombre, String dni, String id) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.id = id;
+        this.puntos = 0;
     }
-    public Cliente(String nombre,String dni,String id,int puntos){
-        this.nombre=nombre;
-        this.dni=dni;
-        this.id=id;
-        this.puntos=puntos;
+
+    public Cliente(String nombre, String dni, String id, int puntos) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.id = id;
+        this.puntos = puntos;
     }
 
 
@@ -42,8 +43,12 @@ public class Cliente {
         this.puntos += puntos;
     }
 
-    public void gastarPuntos(){
-        this.puntos=0;
+    public void resetPuntos() {
+        this.puntos = 0;
+    }
+
+    public void gastarPuntos() {
+        this.puntos = 0;
     }
 
     @Override

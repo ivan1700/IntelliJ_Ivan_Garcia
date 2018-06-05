@@ -8,6 +8,8 @@ public class PruebaIntroduccionProductos {
         Videojuego v2= new Videojuego("DOOM",49.98,"DOOM.jpg",Plataforma.PC,Genero.FPS);
         Periferico p0 = new Periferico("Mando ps4",59.98,"mandops4.jpg",Plataforma.PS4);
         Periferico p1 = new Periferico("Mando XOne",59.98,"mandoXone.jpg",Plataforma.XONE);
+        Merchandising m0=new Merchandising("Peluche Uganda Knuckles",13.98,"uganda.jpg");
+        Merchandising m1=new Merchandising("Camiseta Goku",10.98,"cGoku.jpg");
         Herramientas herramientas=new Herramientas();
         List<Producto> productos = new ArrayList<>();
         productos.add(v0);
@@ -15,6 +17,8 @@ public class PruebaIntroduccionProductos {
         productos.add(v2);
         productos.add(p0);
         productos.add(p1);
+        productos.add(m0);
+        productos.add(m1);
         herramientas.guardarProductosEnFicheros(productos);
     }
 }

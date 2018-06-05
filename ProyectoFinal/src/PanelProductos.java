@@ -117,6 +117,10 @@ public class PanelProductos implements Serializable {
         }
     }
 
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
     public static JPanel getPanel() {
         return panelProductos;
     }

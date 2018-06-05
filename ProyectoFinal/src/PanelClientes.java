@@ -20,6 +20,8 @@ public class PanelClientes {
     private Herramientas herramientas=new Herramientas();
     private PanelRegistrarCliente prc = new PanelRegistrarCliente();
     private PanelRenovarTarjeta prt =new PanelRenovarTarjeta();
+    PanelRegistraProducto prp=new PanelRegistraProducto();
+    private static final int DIVISION_DE_PUNTOS=100;
 
 
 
@@ -71,6 +73,11 @@ public class PanelClientes {
                     insercionID.setText("");
                     login ="";
                 }
+                if (login.equals("add")){
+                    prp.setVisible();
+                    insercionID.setText("");
+                    login="";
+                }
             }
         });
         //Nombre
@@ -82,6 +89,7 @@ public class PanelClientes {
         //puntos
         panel.add(puntos);
         puntos.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Puntos"));
+
         //tarjeta perdida
         panel.add(tarjetaPerdida);
         tarjetaPerdida.setText("Tarjeta perdida");
@@ -173,8 +181,8 @@ public class PanelClientes {
         nombre.setText(c.getNombre());
         dni.setText(c.getDni());
         dniAux.setText(c.getDni());
-        System.out.println("AUXILIAR"+dniAux.getText());
         puntos.setText(String.valueOf(c.getPuntos()));
+        System.out.println("AUXILIAR"+dniAux.getText());
     }
 
     public void comprar(int precio){
@@ -186,14 +194,40 @@ public class PanelClientes {
                 System.out.println(c.getPuntos());
                 c.setPuntos(precio);
                 herramientas.GuardarClientesEnFichero(clientes);
-                clientes=herramientas.LeerClientesDeFichero();
+                //clientes=herramientas.LeerClientesDeFichero();
                 puntos.setText(String.valueOf(c.getPuntos()));
+
                 JOptionPane.showMessageDialog(null,"Compra realizada con exito\n " +
                         "Puntos ganados: "+ precio+"\n Puntos totales: "+c.getPuntos());
             }
         }
     }
 
+    public void comprarPorPuntos(int precio){
+        for (Cliente c:
+             clientes) {
+            if(c.getDni().equals(dniAux.getText())){
+                System.out.println(c.getPuntos());
+                int reduccion= convertirPuntos(c.getPuntos());
+                System.out.println(reduccion);
+                int total=precio-reduccion;
+                String opciones[]={"Aceptar","Cancelar"};
+                int elegido=JOptionPane.showOptionDialog(null,"Puntos ="+c.getPuntos()+" > "+reduccion+"€\n" +
+                                "El producto se quedaría en :"+total+"€\n" +
+                                "Desea pagar con puntos?","Comprar por puntos",1,1,null,
+                        opciones,opciones[0]);
+                if (elegido==0){
+                    c.resetPuntos();
+                    herramientas.GuardarClientesEnFichero(clientes);
+                    JOptionPane.showMessageDialog(null,"Articulo comprado con exito, puntos reseteados a 0");
+                }
+            }
+        }
+    }
+
+    private int convertirPuntos(int puntos) {
+        return puntos/DIVISION_DE_PUNTOS;
+    }
 
 
     public JPanel getPanel(){

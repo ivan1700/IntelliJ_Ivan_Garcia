@@ -16,7 +16,7 @@ public class PanelRegistrarCliente {
     private Herramientas herramientas=new Herramientas();
 
     public PanelRegistrarCliente() {
-        this.frame=new JFrame();
+        this.frame=new JFrame("Nuevo cliente");
         this.panel=new JPanel();
         this.nombre=new JLabel();
         this.dni=new JLabel();

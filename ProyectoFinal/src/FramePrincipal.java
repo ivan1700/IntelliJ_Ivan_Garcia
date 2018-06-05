@@ -14,7 +14,7 @@ public class FramePrincipal implements Serializable {
         PanelProductos ppro = new PanelProductos();
         PanelClientes pc = new PanelClientes();
         PanelInfoProducto pip = new PanelInfoProducto();
-        this.frame = new JFrame();
+        this.frame = new JFrame("GAME By:Ivan Garcia Belen");
         this.productos = ppro.getPanel();
         this.previewProducto = pp.getPanel();
         this.clientes = pc.getPanel();
