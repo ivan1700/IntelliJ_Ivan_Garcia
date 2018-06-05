@@ -30,6 +30,9 @@ public class PanelProductos implements Serializable {
         CrearInterfaz();
     }
 
+    /**
+     * Crea la interfaz de la ventana
+     */
     private void CrearInterfaz() {
         //Menu del SelectorProducto
         final String[] MenuProductos = {"Videojuegos", "Periféricos", "Merchandising"};
@@ -117,6 +120,10 @@ public class PanelProductos implements Serializable {
         }
     }
 
+    /**
+     * Le pasa los productos a otro panel para poder trabajar con esa lista.
+     * @return una lista de productos
+     */
     public List<Producto> getProductos() {
         return productos;
     }

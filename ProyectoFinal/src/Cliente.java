@@ -39,17 +39,21 @@ public class Cliente {
         return puntos;
     }
 
+    /**
+     * Coge los puntos del Cliente y los suma con los nuevos puntos
+     * @param puntos puntos que recibe al comprar un producto
+     */
     public void setPuntos(int puntos) {
         this.puntos += puntos;
     }
 
+    /**
+     * Una vez realizada una compra con puntos vuelven a 0
+     */
     public void resetPuntos() {
         this.puntos = 0;
     }
 
-    public void gastarPuntos() {
-        this.puntos = 0;
-    }
 
     @Override
     public String toString() {

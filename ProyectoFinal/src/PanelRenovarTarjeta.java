@@ -20,6 +20,9 @@ public class PanelRenovarTarjeta {
         CrearInterfaz();
     }
 
+    /**
+     * Crea la interfaz de la ventana
+     */
     private void CrearInterfaz() {
         frame.setLayout(new GridLayout(0,1,2,2));
         frame.setLocationRelativeTo(null);
@@ -47,11 +50,20 @@ public class PanelRenovarTarjeta {
         });
     }
 
+    /**
+     * Cuando se le da al boton de "Confirmar" llama a este metodo para poner todos los campos vacios para luego poder ser usados
+     * nuevamente.
+     */
     private void ResetearCampos() {
         dni.setText("");
         nuevoID.setText("");
     }
 
+    /**
+     * Cambia el valor "ID" de un cliente en cuestión por uno nuevo
+     * @param dni valor "DNI" del cliente a cambiar la ID
+     * @param nuevaID Nueva id que se le aporta
+     */
     private void CambiarID(String dni, String nuevaID) {
         for (Cliente c:
              clientes) {
@@ -65,6 +77,11 @@ public class PanelRenovarTarjeta {
 
     }
 
+    /**
+     * Busca el valor "DNI" del cliente a cambiar la ID
+     * @param dni valor "DNI" del cliente
+     * @return un booleano, dando true si ese usurio existe en la lista y dando falso en el caso contrario.
+     */
     private boolean EncontrarDNI(String dni){
         for (Cliente c:
                 clientes) {

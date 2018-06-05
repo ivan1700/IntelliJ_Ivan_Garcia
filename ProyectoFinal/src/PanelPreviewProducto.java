@@ -17,6 +17,9 @@ public class PanelPreviewProducto {
 
     }
 
+    /**
+     * Crea la interdaz de la ventana
+     */
     private void CrearInterfaz() {
         panelPreviewProducto.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.BLACK), "Preview"));
         panelPreviewProducto.add(LimagenProducto);

@@ -27,6 +27,9 @@ public class PanelRegistrarCliente {
         CrearInterfaz();
     }
 
+    /**
+     * Crea la interfaz de la ventana
+     */
     private void CrearInterfaz() {
         panel.setLayout(new GridLayout(0,2,5,5));
         frame.setSize(400,200);
@@ -56,6 +59,11 @@ public class PanelRegistrarCliente {
         return frame;
     }
 
+    /**
+     * Cuando se le da al boton "Aceptar" crear el usuario, es añadido a la lista y luego se guarda en el fichero
+     * @param clientes lista de clientes para poder luego añadir al nuevo cliente.
+     * @param login ID de la tarjeta que se usará para identificarse.
+     */
     public void CrearUsuario(List<Cliente>clientes ,String login){
         frame.setVisible(true);
         System.out.println("ESTE Es EL LOGIN: "+login);

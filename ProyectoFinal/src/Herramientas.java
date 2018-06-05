@@ -41,6 +41,10 @@ public class Herramientas implements Serializable{
         return salida;
     }
 
+    /**
+     * Guarda una lista de clientes en un archivo para poder leerlos nada más ejecutar el programa
+     * @param lista Una lista con los clientes
+     */
     public  void GuardarClientesEnFichero(List<Cliente> lista){
         try(DataOutputStream dos= new DataOutputStream(new FileOutputStream("clientes.cl"))) {
             for (Cliente c:
@@ -58,6 +62,10 @@ public class Herramientas implements Serializable{
 
     }
 
+    /**
+     * Lee un archivo los clientes que están registrados
+     * @return una lista con los clientes.
+     */
     public  List<Cliente> LeerClientesDeFichero(){
         List<Cliente> lista =new ArrayList<>();
         try(DataInputStream dis= new DataInputStream(new FileInputStream("clientes.cl"))) {

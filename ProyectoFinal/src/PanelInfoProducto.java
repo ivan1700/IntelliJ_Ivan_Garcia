@@ -37,7 +37,9 @@ public class PanelInfoProducto {
         CrearInterfaz();
     }
 
-
+    /**
+     * Crea la interfaz de la ventana
+     */
     private void CrearInterfaz() {
         panel.setLayout(new GridLayout(0, 2));
         panel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY), "Info. Producto"));
@@ -82,7 +84,7 @@ public class PanelInfoProducto {
         comprarPorPuntos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int precio= (int) Double.parseDouble(TFPrecio.getText());
+                double precio= Double.parseDouble(TFPrecio.getText());
                 pc.comprarPorPuntos(precio);
             }
         });

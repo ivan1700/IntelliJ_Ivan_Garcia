@@ -106,6 +106,10 @@ public class PanelRegistraProducto {
 
     }
 
+    /**
+     * Cuando se le da al boton de "Aceptar"  se creara el producto, lo añade a la lista y posteriormente al archivo.
+     * Comprobando previamente que tipo de Producto es.
+     */
     private void agregarProducto() {
         if (tipoP.equals("Videojuego")){
             Videojuego v=new Videojuego(nombre.getText(),Double.parseDouble(precio.getText()),rutaImg.getText(),(Plataforma)tipoPl,(Genero)tipoG);

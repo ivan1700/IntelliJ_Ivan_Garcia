@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaProductos implements Serializable {
-    //static Herramientas herramientas= new Herramientas();
     List<Producto> productos;
     Herramientas herramientas=new Herramientas();
 

@@ -23,6 +23,9 @@ public class FramePrincipal implements Serializable {
 
     }
 
+    /**
+     * Configuración de la ventana
+     */
     private void CrearInterfaz() {
         frame.setLayout(new GridLayout(0, 2, 5, 5));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

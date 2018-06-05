@@ -7,6 +7,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+
 public class PanelClientes {
     private JFrame nuevoUsuario;
     private JPanel panel;
@@ -42,6 +43,9 @@ public class PanelClientes {
 
     }
 
+    /**
+     * Crea la interfaz de la ventana
+     */
     private void CrearInterfaz() {
         panel.setLayout(new GridLayout(0,1));
         panel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Cliente"));
@@ -185,6 +189,11 @@ public class PanelClientes {
         System.out.println("AUXILIAR"+dniAux.getText());
     }
 
+    /**
+     * Cuando se pulsa el boton "Comprar" del "PanelInfoProductos" el programa busca el cliente que aparece en este panel en la lista
+     * para poder sumarle los puntos de la compra.
+     * @param precio El precio del producto que se compra para poder convertirlo en puntos.
+     */
     public void comprar(int precio){
         for (Cliente c:
              clientes) {
@@ -203,14 +212,19 @@ public class PanelClientes {
         }
     }
 
-    public void comprarPorPuntos(int precio){
+    /**
+     * Cuando se pulsa el boton "Comprar Por Puntos" del "PanelInfoProductos" el programa busca el cliente que aparece en este panel en la lista
+     * para poder gastar sus puntos y así pagar menos por el producto
+     * @param precio El precio del producto que se compra para recudirle el precio con los puntos.
+     */
+    public void comprarPorPuntos(double precio){
         for (Cliente c:
              clientes) {
             if(c.getDni().equals(dniAux.getText())){
                 System.out.println(c.getPuntos());
                 int reduccion= convertirPuntos(c.getPuntos());
                 System.out.println(reduccion);
-                int total=precio-reduccion;
+                double total=precio-reduccion;
                 String opciones[]={"Aceptar","Cancelar"};
                 int elegido=JOptionPane.showOptionDialog(null,"Puntos ="+c.getPuntos()+" > "+reduccion+"€\n" +
                                 "El producto se quedaría en :"+total+"€\n" +
@@ -225,6 +239,11 @@ public class PanelClientes {
         }
     }
 
+    /**
+     * Hace la transformación de los puntos a euros para luego aplicarle el descuento.
+     * @param puntos puntos del cliente
+     * @return descuento a añadir.
+     */
     private int convertirPuntos(int puntos) {
         return puntos/DIVISION_DE_PUNTOS;
     }
