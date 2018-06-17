@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Herramientas {
-    public void guardarClientesEnFicheros(List<Cliente> lista){
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("productos.ob"))) {
+public class Herramientas implements Serializable{
+    public static void guardarClientesEnFicheros(List<Cliente> lista){
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("clientesQuirant.cl"))) {
             try{
                 oos.writeObject(lista);
             }catch (NotSerializableException e){
@@ -21,9 +21,9 @@ public class Herramientas {
      * Lee los productos del archivo
      * @return lista de los prodcutos disponibles
      */
-    public  List<Cliente> leerClientesDeFichero(){
+    public static  List<Cliente> leerClientesDeFichero(){
         List<Cliente> salida = new ArrayList<>();
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("productos.ob"))) {
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("clientesQuirant.cl"))) {
             try{
                 salida= (List<Cliente>) ois.readObject();
             } catch (ClassNotFoundException e) {

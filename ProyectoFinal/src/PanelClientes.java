@@ -208,6 +208,7 @@ public class PanelClientes {
 
                 JOptionPane.showMessageDialog(null,"Compra realizada con exito\n " +
                         "Puntos ganados: "+ precio+"\n Puntos totales: "+c.getPuntos());
+               
             }
         }
     }

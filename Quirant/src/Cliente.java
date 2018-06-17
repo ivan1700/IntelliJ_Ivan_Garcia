@@ -4,14 +4,16 @@ public class Cliente implements Serializable {
     private String nombre;
     private String apellido0;
     private String apellido1;
+    private String nombreCompleto;
     private String direccion;
     private int telefono;
     private String informacion;
 
-    public Cliente(String nombre, String apellido0, String apellido1, String direccion, int telefono, String informacion) {
+    public Cliente(String nombre, String apellido0, String apellido1, String direccion, int telefono) {
         this.nombre = nombre;
         this.apellido0 = apellido0;
         this.apellido1 = apellido1;
+        this.nombreCompleto=nombre+" "+apellido0+" "+apellido1;
         this.direccion = direccion;
         this.telefono = telefono;
         this.informacion = informacion;
@@ -63,5 +65,10 @@ public class Cliente implements Serializable {
 
     public void setInformacion(String informacion) {
         this.informacion = informacion;
+    }
+
+    @Override
+    public String toString() {
+        return nombreCompleto + '\n';
     }
 }

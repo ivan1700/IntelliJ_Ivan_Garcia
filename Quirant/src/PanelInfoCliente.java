@@ -4,13 +4,14 @@ import java.awt.*;
 
 public class PanelInfoCliente {
     private JPanel panel;
-    private JTextArea texto;
+    private JLabel texto;
     private JScrollPane scrollText;
+
 
     public PanelInfoCliente(){
         panel=new JPanel();
-        texto= new JTextArea();
-        scrollText= new JScrollPane(texto);
+        texto= new JLabel();
+        //scrollText= new JScrollPane(texto);
 
         CrearInterfaz();
     }
@@ -19,7 +20,13 @@ public class PanelInfoCliente {
         panel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.GRAY),"Informacion del cliente"));
         panel.setVisible(true);
         panel.setLayout(new GridLayout(1,0));
-        panel.add(scrollText);
+        panel.add(texto);
+    }
+
+    public void cargarInfo(String s){
+        System.out.println(s);
+        texto.setText(s);
+//        scrollText.add(texto);
     }
 
     public JPanel getPanel(){
